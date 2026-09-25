@@ -3,3 +3,19 @@ def get_file_path():
     if not file_path:
         file_path = 'My_expenses.json'
     return file_path
+
+
+def loading_data(file_path):
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                orders = json.load(file)
+                if orders:
+                    return orders
+                print('Файл пуст! Список заказов по умолчанию пуст.')
+                return []
+        except json.JSONDecodeError:
+            print('Ошибка чтения JSON. Файл поврежден. Создан новый список.')
+            return []
+    print('Файл не найден. Список заказов по умолчанию пуст.')
+    return []
