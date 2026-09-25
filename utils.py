@@ -19,3 +19,8 @@ def loading_data(file_path):
             return []
     print('Файл не найден. Список заказов по умолчанию пуст.')
     return []
+
+
+def save_data(data):
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4)
