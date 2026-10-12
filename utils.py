@@ -24,3 +24,18 @@ def loading_data(file_path):
 def save_data(data):
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4)
+
+
+def add_expense(expenses):
+    try:
+        summa = float(input("Введите сумму: "))
+        category = input("Введите категорию: ")
+        date = input("Введите дату (ГГГГ-ММ-ДД) или нажмите Enter для текущей: ")
+        if not date:
+            date = datetime.now().strftime("%Y-%m-%d")
+
+        expenses.append({"summa": summa, "category": category, "date": date})
+        save_data(expenses)
+        print("Запись добавлена!")
+    except ValueError:
+        print("Ошибка: некорректное число.")
