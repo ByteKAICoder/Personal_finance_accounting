@@ -39,3 +39,27 @@ def add_expense(expenses):
         print("Запись добавлена!")
     except ValueError:
         print("Ошибка: некорректное число.")
+
+
+def show_expenses(expenses, filter_val=None, filter_type=None):
+    if filter_type == 'category':
+        filtered = [i for i in expenses if i['category'].lower() == filter_val.lower()]
+    elif filter_type == 'date':
+        filtered = [i for i in expenses if i['date'] == filter_val]
+    else:
+        filtered = expenses
+
+    if not filtered:
+        print("Записей не найдено.")
+        return
+
+    print("№ | Дата | Категория | Сумма")
+    print("-" * 35)
+
+    total = 0
+    for n, i in enumerate(filtered, 1):
+        print(f"{n}. {i['date']} | {i['category']} | {i['summa']} руб.")
+        total += i['summa']
+
+    print("-" * 35)
+    print(f"Итого: {total} руб.")
