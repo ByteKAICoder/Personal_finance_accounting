@@ -63,3 +63,20 @@ def show_expenses(expenses, filter_val=None, filter_type=None):
 
     print("-" * 35)
     print(f"Итого: {total} руб.")
+
+
+def delete_expense(expenses):
+    if not expenses:
+        print("Список пуст, нечего удалять.")
+        return
+    show_expenses(expenses)
+    try:
+        num = int(input("Введите номер записи для удаления: ")) - 1
+        if 0 <= num < len(expenses):
+            removed = expenses.pop(num)
+            save_data(expenses)
+            print(f"Запись '{removed['category']} на {removed['summa']} руб.' удалена.")
+        else:
+            print("Ошибка: записи с таким номером нет.")
+    except ValueError:
+        print("Ошибка: некорректное число.")
