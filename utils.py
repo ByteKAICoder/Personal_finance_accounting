@@ -80,3 +80,21 @@ def delete_expense(expenses):
             print("Ошибка: записи с таким номером нет.")
     except ValueError:
         print("Ошибка: некорректное число.")
+
+
+def show_stats(expenses):
+    if not expenses:
+        print("Нет данных для статистики.")
+        return
+
+    total_all = sum(i['summa'] for i in expenses)
+    stats = {}
+    for i in expenses:
+        category = i['category']
+        stats[category] = stats.get(category, 0) + i['summa']
+
+    print("\nСтатистика по категориям:")
+    for category, summa in stats.items():
+        percent = (summa / total_all) * 100
+        print(f"- {category}: {summa} руб. ({percent:.1f}%)")
+    print(f"\nОбщая сумма всех расходов: {total_all} руб.")
