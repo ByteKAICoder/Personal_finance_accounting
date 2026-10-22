@@ -1,7 +1,4 @@
-import json
-import os
-import csv
-from datetime import datetime
+from utils import *
 
 def main():
     print('-' * 40)
@@ -19,3 +16,7 @@ def main():
         print('6. Статистика и общая сумма')
         print('7. Выход')
         print('-' * 40)
+
+
+if __name__ == '__main__':
+    main()
