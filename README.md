@@ -1,5 +1,9 @@
 # Personal_finance_accounting
 
+## Описание
+
+**Personal finance accounting** - консольное приложение для учёта расходов. Интерфейс позволяет записывать, удалять и просматривать расходы. 
+
 ### 📋 Overview / Обзор проекта
 
 | Parameter | Description |
