@@ -1,14 +1,14 @@
-# Personal_finance_accounting
+# Personal finance accounting
 
 ## Описание
 
 **Personal finance accounting** - консольное приложение для учёта расходов. Интерфейс позволяет записывать, удалять и просматривать расходы. 
 
-### 📋 Overview / Обзор проекта
+### 📋 Обзор проекта
 
-| Parameter | Description |
+| Параметр | Описание |
 | :--- | :--- |
-| **Start date** | 23.09.2026 |
-| **Project goal** | Creating a personal finance accounting |
-| **Project type** | Console Application (CLI) |
-| **Interface** | Command Line (Terminal) |
+| **Дата начала** | 23.09.2026 |
+| **Цель проекта** | Создание системы учета личных финансов |
+| **Тип проекта** | Консольное приложение (CLI) |
+| **Интерфейс** | Командная строка (терминал) |
