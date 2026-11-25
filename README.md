@@ -1,4 +1,4 @@
-# Personal finance accounting
+# 💸 Personal finance accounting
 
 ## Описание
 
